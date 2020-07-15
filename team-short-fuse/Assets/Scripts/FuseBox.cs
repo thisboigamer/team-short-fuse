@@ -141,6 +141,10 @@ public class FuseBox : MonoBehaviour
 
                 //Removes the sixth fuse from the user's inventory and adds it to the fuse box
 
+                GameObject findLightset6 = GameObject.FindGameObjectWithTag("Lightset6"); //find an object with the lightset1 tag
+                Lights6 getscript = findLightset6.GetComponent<Lights6>(); //reference the objects script which is called Lights1
+                getscript.LightTest(); // calls the LightTest function
+
 
             }
         }
