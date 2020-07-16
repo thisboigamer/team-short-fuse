@@ -21,6 +21,11 @@ public class Fuse6 : MonoBehaviour
                 Destroy(gameObject);
 
                 Debug.Log("Fuse six get");
+                //Removes the fuse from the map and puts it in the player's inventory
+
+                FindObjectOfType<Inventory>().FuseUI();
+
+                //Gives the player an on screen prompt telling them they found the fuse
             }
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fuse2 : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     //checks if something has collided with the Fuse
     {
@@ -21,6 +22,11 @@ public class Fuse2 : MonoBehaviour
                 Destroy(gameObject);
 
                 Debug.Log("Fuse two Get");
+                //Removes the fuse from the map and puts it in the player's inventory
+
+                FindObjectOfType<Inventory>().FuseUI();
+
+                //Gives the player an on screen prompt telling them they found the fuse
             }
         }
     }

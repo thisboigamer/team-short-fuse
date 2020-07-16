@@ -49,4 +49,12 @@ public class Timer : MonoBehaviour
         }
     }
 
+    public void LoseTime()
+    {
+        //subtract and set health to 
+        playtime -= 10;
+
+        updateUI();
+    }
+
 }

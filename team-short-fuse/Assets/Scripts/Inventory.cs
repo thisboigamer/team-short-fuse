@@ -11,21 +11,24 @@ public class Inventory : MonoBehaviour
     public bool fuse4ininventory = false;
     public bool fuse5ininventory = false;
     public bool fuse6ininventory = false;
+    public GameObject FuseGetUI;
     //Creates the inventory system
 
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void RemoveFuseUI()
     {
-        
+        FuseGetUI.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FuseUI()
     {
-        
+        FuseGetUI.SetActive(true);
+
+        Invoke("RemoveFuseUI", 1);
     }
+
+
+
+
+
+
 }

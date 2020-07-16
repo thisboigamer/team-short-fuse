@@ -11,6 +11,20 @@ public class FuseBox : MonoBehaviour
    public bool fuse4collected = false;
    public bool fuse5collected = false;
    public bool fuse6collected = false;
+   public GameObject FuseInsertUI;
+   public GameObject GetPoptartUI;
+
+    private void RemoveUI()
+    {
+    FuseInsertUI.SetActive(false);
+    }
+
+    private void RemoveUIPoptart()
+    {
+        FuseInsertUI.SetActive(false);
+    }
+
+
     //Sets the Default values for the fuses being aquired
 
     private void OnTriggerEnter(Collider other)
@@ -38,6 +52,11 @@ public class FuseBox : MonoBehaviour
 
                 //Removes the fuse from the user's inventory and adds it to the fuse box
 
+                FuseInsertUI.SetActive(true);
+
+               Invoke("RemoveUI", 2);
+                //Gives the User a prompt telling them they put a fuse in the box
+
                 GameObject findLightset1 = GameObject.FindGameObjectWithTag("Lightset1"); //find an object with the lightset1 tag
                 Lights1 getscript = findLightset1.GetComponent<Lights1>(); //reference the objects script which is called Lights1
                 getscript.LightTest(); // calls the LightTest function
@@ -58,6 +77,11 @@ public class FuseBox : MonoBehaviour
 
                 //Removes  the second fuse from the user's inventory and adds it to the fuse box
 
+                FuseInsertUI.SetActive(true);
+
+                Invoke("RemoveUI", 2);
+                //Gives the User a prompt telling them they put a fuse in the box
+
                 GameObject findLightset2 = GameObject.FindGameObjectWithTag("Lightset2"); //find an object with the lightset1 tag
                 Lights2 getscript = findLightset2.GetComponent<Lights2>(); //reference the objects script which is called Lights1
                 getscript.LightTest(); // calls the LightTest function
@@ -77,6 +101,11 @@ public class FuseBox : MonoBehaviour
                 Debug.Log("Fuse 3 Inserted");
 
                 //Removes the third fuse from the user's inventory and adds it to the fuse box
+
+                FuseInsertUI.SetActive(true);
+
+                Invoke("RemoveUI", 2);
+                //Gives the User a prompt telling them they put a fuse in the box
 
                 GameObject findLightset3 = GameObject.FindGameObjectWithTag("Lightset3"); //find an object with the lightset1 tag
                 Lights3 getscript = findLightset3.GetComponent<Lights3>(); //reference the objects script which is called Lights1
@@ -100,6 +129,11 @@ public class FuseBox : MonoBehaviour
 
                 //Removes the fourth fuse from the user's inventory and adds it to the fuse box
 
+                FuseInsertUI.SetActive(true);
+
+                Invoke("RemoveUI", 2);
+                //Gives the User a prompt telling them they put a fuse in the box
+
                 GameObject findLightset4 = GameObject.FindGameObjectWithTag("Lightset4"); //find an object with the lightset1 tag
                 Lights4 getscript = findLightset4.GetComponent<Lights4>(); //reference the objects script which is called Lights1
                 getscript.LightTest(); // calls the LightTest function
@@ -119,6 +153,11 @@ public class FuseBox : MonoBehaviour
                 Debug.Log("Fuse 5 Inserted");
 
                 //Removes the fifth fuse from the user's inventory and adds it to the fuse box
+
+                FuseInsertUI.SetActive(true);
+
+                Invoke("RemoveUI", 2);
+                //Gives the User a prompt telling them they put a fuse in the box
 
                 GameObject findLightset5 = GameObject.FindGameObjectWithTag("Lightset5"); //find an object with the lightset1 tag
                 Lights5 getscript = findLightset5.GetComponent<Lights5>(); //reference the objects script which is called Lights1
@@ -141,9 +180,10 @@ public class FuseBox : MonoBehaviour
 
                 //Removes the sixth fuse from the user's inventory and adds it to the fuse box
 
-                GameObject findLightset6 = GameObject.FindGameObjectWithTag("Lightset6"); //find an object with the lightset1 tag
-                Lights6 getscript = findLightset6.GetComponent<Lights6>(); //reference the objects script which is called Lights1
-                getscript.LightTest(); // calls the LightTest function
+                GetPoptartUI.SetActive(true);
+
+                Invoke("RemoveUIPoptart", 2);
+                //Gives the User a prompt telling them they put a fuse in the box and to go get their poptart
 
 
             }
